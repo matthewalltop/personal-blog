@@ -13,14 +13,11 @@ import { Col, Row } from 'react-bootstrap';
 
 function App() {
   return (
-    <div className="container-fluid">
-        <Header />
+    <div>
         <Container fluid>
-          <Row className="pt-5 justify-content-center">
-            <Col>
-                <Login />
-            </Col>
-        </Row>
+            <Row className="pt-5 justify-content-center">
+              <PostPage />
+            </Row>
           </Container>
     </div>
   );

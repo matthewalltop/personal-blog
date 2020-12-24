@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import { Button, InputGroup, FormControl, Form } from 'react-bootstrap';
 
 
-
-
-
-
-
 class Login extends Component {
     constructor(props, context){
         super(props, context);
