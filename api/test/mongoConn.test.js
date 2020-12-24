@@ -42,7 +42,7 @@ describe('Mongo Connection', () => {
     it('Should create an admin user', (done) => {
         var user = new User({
             userName: 'Matthew',
-            emailAddress: 'Balltop729@gmail.com',
+            emailAddress: 'test@test.com',
             password: '^dIeYkniAsjpmKlz37!wz%8&^EEP3j0IpUO',
             updated: {
               updatedBy: 'Matthew',
