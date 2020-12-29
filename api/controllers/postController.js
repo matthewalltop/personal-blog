@@ -4,7 +4,6 @@ const Post = require('../models/post');
 
 postRouter.route('/posts')
   .get((req, res) => {
-    console.log('It is getting here');
     Post.find((err, posts) => {
       if (err) {
         return res.send(err);
