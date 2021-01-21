@@ -37,7 +37,7 @@ export default class PostPage extends Component {
                 
                 console.log(post);
                 // axios
-                //     .post(`$localhost:???/api/login`, post)
+                //     .post(`$localhost:???/api/post`, post)
                 //     .then(response => {
                 //         if (response.status === 200) {
                         
@@ -52,10 +52,6 @@ export default class PostPage extends Component {
                 //                 break;
                 //             case 401:
                 //             message = 'User not authorized';
-                //             break;
-                //         case 409:
-                //             message = `User not authorized`; // TODO: Resend
-                //             this.setState({registrationExpired: true});
                 //             break;
                 //         case 400:
                 //             message = error.response.data.Message;

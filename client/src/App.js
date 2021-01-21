@@ -16,7 +16,7 @@ function App() {
     <div>
         <Container fluid>
             <Row className="pt-5 justify-content-center">
-              <PostPage />
+              <Login />
             </Row>
           </Container>
     </div>

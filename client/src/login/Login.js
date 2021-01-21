@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, InputGroup, FormControl, Form } from 'react-bootstrap';
+import {GoogleLogin} from 'react-google-login';
 
 
 class Login extends Component {
@@ -14,7 +15,20 @@ class Login extends Component {
             error: ''
         };
         this.updateCredential = this.updateCredential.bind(this);
-        this.login = this.login.bind(this);
+        this.onSuccess = this.onSuccess.bind(this);
+        this.onFailure = this.onFailure.bind(this);
+    }
+
+    onSuccess(response) {
+        console.log(response);
+        // TODO
+        // Pass this to the server and authenticate.
+        // Redirect admin to post page.
+    }
+
+    onFailure(response) {
+        console.log(response);
+        // Display error message on-screen.
     }
 
 
@@ -36,45 +50,6 @@ class Login extends Component {
         }
 
         console.log(`It's getting this far username:${username}, password:${password}`);
-
-    //     axios
-    //   .post(`${Config.apiPrefix}/api/login`, {
-    //     username,
-    //     password
-    //   })
-    //   .then(response => {
-    //     if (response.status === 200) {
-    //       window.sessionStorage.authToken = response.data;
-    //       onSuccess(true);
-    //     }
-    //   })
-    //   .catch(error => {
-    //     let message;
-
-    //     switch (error.response.status) {
-    //       case 500:
-    //         message = 'A server error occurred';
-    //         break;
-    //       case 401:
-    //         message = 'User not authorized';
-    //         break;
-    //       case 409:
-    //         message = `User not authorized`; // TODO: Resend
-    //         this.setState({registrationExpired: true});
-    //         break;
-    //       case 400:
-    //         message = error.response.data.Message;
-    //         break;
-    //       default:
-    //         message = 'Sorry, something went wrong';
-    //         break;
-    //     }
-
-    //     this.setState({ error: message });
-    // });
-
-
-
     }
 
 
@@ -102,8 +77,15 @@ class Login extends Component {
                                     onChange={this.updateCredential}
                         />
                     </Form.Group>
-                    <Button variant="primary"
-                            onClick={this.login}>Log in</Button>
+                    <GoogleLogin
+                        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                        buttonText="Login with Google"
+                        onSuccess={this.onSuccess}
+                        onFailure={this.onFailure}
+                        cookiePolicy={'single_host_origin'}
+                    />
+                    {/* <Button variant="primary"
+                            onClick={this.login}>Log in</Button> */}
                 </Form>
             </div>
         );

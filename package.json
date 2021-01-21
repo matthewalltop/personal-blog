@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "react-bootstrap": "^1.0.0-beta.16",
-    "react-markdown": "^4.2.2",
-    "react-mde": "^8.0.1"
-  }
-}
